@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jogo da Advinhação</title>
+    <style>
+        .container{
+            text-align: center;
+            color: #069;
+            font-size: 18px;
+            style = "font-family:courier,arial,helvetica;
+        }
+
+      button{
+        background: #069;
+        color: white;
+        font-size: 20px;
+        padding: 4px 12px;
+        cursor: pointer;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+      <div class="container">
+          <h1 style = "font-family:courier,arial,helvetica;"> Jogo da Advinhação</h1>
+          <br/>
+          <h2 style = "font-family:courier,arial,helvetica;"> Escolha a dificultade desejada:</h2>
+          <br/>
+          <button id="Facil">Fácil</button>
+          <button id="Medio">Médio</button>
+          <button id="Dificil">Difícil</button>
+          <br/><br/><br/>
+
+          <!-- <input type="text" id="valorChute">
+          <p id="resultadoChute"></p>
+          <button onclick="mostrarChute"></button> -->
+          <p id="texto"></p>
+
+      </div>
+
+
+
+    <script>
+
+      function sorteia(){
+          return Math.round(Math.random()*100);
+      }
+      var numeroPensado = sorteia();
+      console.log(numeroPensado);
+
+
+      function mostrarChute(){
+          var texto = document.getElementById("valorChute").value;
+          document.getElementById("resultadoChute").innerHTML = "resultadoChute: "+ texto;
+      }
+
+        var Facil = document.getElementById('Facil');
+        var Medio = document.getElementById('Medio');
+        var Difcil = document.getElementById('Dificil');
+
+        // if(Facil){
+        //     document.getElementById("Dificuldade: Fácil").innerHTML ;
+        // }
+
+        Facil.addEventListener("click", function(){
+
+            var chutesTotal = 10;
+            //console.log(chutes);
+
+            for (chutesTotal; chutesTotal >= 1; chutesTotal--){
+
+            var chute = parseInt(prompt("Qual número você acha que é?"));
+
+                if(chute == numeroPensado) {
+
+                   alert(`Acertou, danado, pois eu pensei no ${numeroPensado}`);
+                   break;
+                 } else {
+
+                     if(chute > numeroPensado) {
+
+                         alert("Você errou! Seu chute é maior que o número pensado!");
+
+                   } else {
+
+                       alert("Você errou! Seu chute é menor que o número pensado!");
+                     }
+
+                   }
+
+            }
+
+            document.getElementById("texto").innerHTML = ("Fim do jogo!");
+        })
+
+
+
+        Medio.addEventListener("click", function(){
+            var chutes = 7;
+
+
+            for (chutes; chutes >= 1; chutes--){
+
+            var chute = parseInt(prompt("Qual número você acha que é?"));
+
+                if(chute == numeroPensado) {
+
+                   alert(`Acertou, danado, pois eu pensei no ${numeroPensado}`);
+                   break;
+                 } else {
+
+                     if(chute > numeroPensado) {
+
+                         alert("Você errou! Seu chute é maior que o número pensado!");
+
+                   } else {
+
+                       alert("Você errou! Seu chute é menor que o número pensado!");
+                     }
+
+                   }
+
+            }
+
+            document.getElementById("texto").innerHTML = ("Fim do jogo!");
+        })
+
+        Difcil.addEventListener("click", function(){
+            var chutes = 5;
+
+
+            for (chutes; chutes >= 1; chutes--){
+
+            var chute = parseInt(prompt("Qual número você acha que é?"));
+
+                if(chute == numeroPensado) {
+
+                   alert(`Acertou, danado, pois eu pensei no ${numeroPensado}`);
+                   break;
+                 } else {
+
+                     if(chute > numeroPensado) {
+
+                         alert("Você errou! Seu chute é maior que o número pensado!");
+
+                   } else {
+
+                       alert("Você errou! Seu chute é menor que o número pensado!");
+                     }
+
+                   }
+
+            }
+
+            document.getElementById("texto").innerHTML = ("Fim do jogo!");
+        })
+
+    </script>
+
+  </body>
+
+</html>
